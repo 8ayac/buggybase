@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  buggybase:
+    build: .
+    ports:
+      - "5000:5000"
+    tty: true
+    environment:
+      FLASK_APP: buggybase
+    command: flask run --host 0.0.0.0 --port 5000

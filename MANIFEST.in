@@ -1,0 +1,3 @@
+graft buggybase/static
+graft buggybase/templates
+global-exclude *.pyc

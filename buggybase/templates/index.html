@@ -1,0 +1,37 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Buggy Base{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="/" class="mx-auto navbar-brand">Buggy Base</a>
+    </nav>
+    <div class="container mx-auto">
+        <img src="{{ url_for('static', filename='bee64.png') }}" width="50%"
+             class="mx-auto d-block img-fluid align-content-center" alt="bee">
+        <form action="/" method="POST">
+            <div>
+                <input type="text" class="form-control form-control-lg mt-2 mb-2" placeholder="Input text" name="s">
+            </div>
+            <div class="btn-group btn-group-lg d-flex mt-2 mb-2" role="group">
+                <button type="submit" class="btn btn-primary w-100" name="mode" value="encode">
+                    Encode
+                </button>
+                <button type="submit" class="btn btn-outline-secondary w-100" name="mode" value="decode">
+                    Decode
+                </button>
+            </div>
+        </form>
+        {% if result %}
+            <div class="p-1 bg-success text-light text-center" style="overflow-wrap: break-word;">
+                Result
+                <p class="h3">{{ result }}</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
