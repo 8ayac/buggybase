@@ -25,7 +25,7 @@ def post_index():
 
 @bp.errorhandler(500)
 def internal_server_error(e):
-    mascot = random.choice(list('🐌🐛🦟🐜🐝🐞🦂🦗🦋🕷'))  # just choice a mascot
+    mascot = random.choice(list('🐌🐛🦟🐜🐝🐞🦂🦗🦋🕷'))  # just choose a mascot
     return render_template_string(f'{mascot}&lt; {e.description}')
 
 
