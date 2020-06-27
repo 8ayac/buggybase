@@ -35,8 +35,6 @@ def encode(s: str):
 
 def decode(s: str):
     try:
-        result = b64decode(s.encode()).decode('utf-8')
+        return b64decode(s.encode()).decode('utf-8')
     except:
         abort(500, description=f'base64: invalid input ({s=})')
-
-    return result
